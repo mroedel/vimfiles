@@ -1,45 +1,47 @@
 set nocompatible                                                                "This must be first, because it changes other options as a side effect.
 filetype off                                                                    "required
-call plug#begin('~/.vim/bundle')
+set rtp+=~/.vim/bundle/Vundle.vim                                               "Add Vundle to Vim's runtime path
+call vundle#begin()                                                             " Execute Vundle Plugin management
+Plugin 'gmarik/Vundle.vim'                                                      " Let Vundle manage itself
 
-Plug 'ryanoasis/vim-webdevicons'
-Plug 'tpope/vim-commentary'
-Plug 'nelstrom/vim-visual-star-search'
-Plug 'mileszs/ack.vim'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'Raimondi/delimitMate'
-Plug 'mattn/emmet-vim'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-fugitive'
-Plug 'scrooloose/syntastic'
-Plug 'scrooloose/nerdtree'
-Plug 'airblade/vim-gitgutter'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'duff/vim-bufonly'
-Plug 'tmhedberg/matchit'
-Plug 'gregsexton/MatchTag'
-Plug 'kristijanhusak/vim-hybrid-material'
-Plug 'Shougo/neocomplete.vim'
-Plug 'Shougo/neosnippet'
-Plug 'honza/vim-snippets'
-Plug 'othree/html5.vim'
-Plug 'xsbeats/vim-blade'
-Plug 'elzr/vim-json'
-Plug 'evidens/vim-twig'
-Plug 'majutsushi/tagbar'
-Plug 'jelera/vim-javascript-syntax'
-Plug 'pangloss/vim-javascript'
-Plug 'StanAngeloff/php.vim'
-Plug 'stephpy/vim-yaml'
-Plug 'cakebaker/scss-syntax.vim'
-Plug 'kchmck/vim-coffee-script'
-Plug 'mustache/vim-mustache-handlebars'
-Plug 'mhinz/vim-startify'
-Plug 'marijnh/tern_for_vim', {'do': 'npm install'}
+Plugin 'ryanoasis/vim-webdevicons'
+Plugin 'tpope/vim-commentary'
+Plugin 'nelstrom/vim-visual-star-search'
+Plugin 'mileszs/ack.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'Raimondi/delimitMate'
+Plugin 'mattn/emmet-vim'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-fugitive'
+Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdtree'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'duff/vim-bufonly'
+Plugin 'tmhedberg/matchit'
+Plugin 'gregsexton/MatchTag'
+Plugin 'kristijanhusak/vim-hybrid-material'
+Plugin 'Shougo/neocomplete.vim'
+Plugin 'Shougo/neosnippet'
+Plugin 'honza/vim-snippets'
+Plugin 'othree/html5.vim'
+Plugin 'xsbeats/vim-blade'
+Plugin 'elzr/vim-json'
+Plugin 'evidens/vim-twig'
+Plugin 'majutsushi/tagbar'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'pangloss/vim-javascript'
+Plugin 'StanAngeloff/php.vim'
+Plugin 'stephpy/vim-yaml'
+Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'mhinz/vim-startify'
+Plugin 'marijnh/tern_for_vim', {'do': 'npm install'}
 
-call plug#end()
+call vundle#end()
 
 filetype plugin indent on                                                       "Enable plugins and indents by filetype
 
@@ -75,7 +77,7 @@ set ignorecase                                                                  
 set hlsearch                                                                    "Highlight search term
 set incsearch                                                                   "Jump to found term while searching
 set showmatch                                                                   "Highlight matching bracket
-set mouse=a                                                                     "Enable mouse
+"set mouse=a                                                                     "Enable mouse
 set nostartofline                                                               "Jump to first non-blank character
 set timeoutlen=1000 ttimeoutlen=200                                             "Reduce Command timeout for faster escape and O
 set laststatus=2                                                                "Show statusbar
@@ -307,7 +309,7 @@ let g:ctrlp_custom_ignore = {'dir':  '\v[\/]\.(meteor)$'}                       
 let g:ctrlp_prompt_mappings = {'PrtDeleteEnt()': ['<c-@>']}                     "Map delete buffer in ctrlp
 
 let g:airline_powerline_fonts = 1                                               "Enable powerline fonts
-let g:airline_theme = "hybrid"                                                  "Set theme to powerline default theme
+let g:airline_theme = "dark"                                                    "Set theme to powerline default theme
 let g:airline_section_y = '%{substitute(getcwd(), expand("$HOME"), "~", "g")}'  "Set relative path
 let g:airline#extensions#whitespace#enabled = 0                                 "Disable whitespace extension
 let g:airline#extensions#tabline#enabled = 1                                    "Enable tabline extension
