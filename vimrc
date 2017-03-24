@@ -4,7 +4,7 @@ set rtp+=~/.vim/bundle/Vundle.vim                                               
 call vundle#begin()                                                             " Execute Vundle Plugin management
 Plugin 'gmarik/Vundle.vim'                                                      " Let Vundle manage itself
 
-Plugin 'ryanoasis/vim-webdevicons'
+Plugin 'ryanoasis/vim-devicons'
 Plugin 'tpope/vim-commentary'
 Plugin 'nelstrom/vim-visual-star-search'
 Plugin 'mileszs/ack.vim'
@@ -56,7 +56,7 @@ set guioptions-=T                                                               
 set guioptions-=L                                                               "remove left scrollbar when vertical split
 set guioptions-=r                                                               "remove left scrollbar when vertical split
 set guioptions-=l                                                               "remove left scrollbar
-set guifont=Inconsolata\ for\ Powerline\ 12                                     "font setup
+set guifont=Knack\ Regular\ Nerd\ Font\ Complete\ Mono:h14                                     "font setup
 set linespace=10                                                                "Set lineheight in gvim
 
 " ================ General Config ====================
@@ -132,7 +132,7 @@ autocmd vimrc BufWritePre * :call s:StripTrailingWhitespaces()                  
 autocmd vimrc InsertLeave * NeoSnippetClearMarkers                              "Remove unused markers for snippets
 autocmd vimrc VimEnter * if !argc() | Startify | endif                          "If no file is selected, execute Startify
 autocmd vimrc FileType html,javascript setlocal sw=2 sts=2 ts=2                 "Set 2 indent for html
-autocmd vimrc FileType php,javascript setlocal cc=80                            "Set right margin only for php and js
+"autocmd vimrc FileType php,javascript setlocal cc=80                            "Set right margin only for php and js
 
 autocmd vimrc GUIEnter * set vb t_vb=                                           "Disable visual bell completely
 autocmd vimrc VimEnter * set vb t_vb=
@@ -224,6 +224,12 @@ nnoremap <Leader>v <C-w>v
 " Down is really the next line
 nnoremap j gj
 nnoremap k gk
+
+" Switch Buffers with ease
+map <C-S-Right> :bn<CR>
+map <C-S-Left>  :bp<CR>
+map <C-S-n> :enew<CR>
+map <M-D-d> :bd<CR>
 
 " Expand snippets on tab if snippets exists, otherwise do autocompletion
 imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
